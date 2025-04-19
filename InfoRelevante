@@ -1,0 +1,34 @@
+Mongo = Base de datos
+Express = framework para el back
+Angular = framework oara el fornt
+Node.js= entorno de ejecucion que lanza el servidor
+______________________________________________________________________________________
+intalar nodejs.
+comando [npm init --yes]
+inicia un proyecto el cual crea un archivo llamado package.json que contiene informacion base del proyecto
+comando [node index.js]
+lanza el servidor
+_____________________________________________________________________________________
+MEAN Stack Express
+framework para la creacion de aplicaciones (facilitando su creacion)
+soporta peticions HTTP
+comando intalacion [npm install express --save]
+en este creara un archivo node_modules y un archivo llamado package-lock.json
+_____________________________________________
+Comando [npm i -D nodemon] #permite que el servidor se actualice cada vez que detecta un cambio
+instalara nodemon como dependencia de dasarollo
+Archivo package.json agrega
+en la parte de scripts ["dev": "nodemon index.js"]
+Para ejecutarlo
+npm run dev
+___________________________
+Mecanismo servidores web para hacer peticiones protocolo HTPP (HYPERTEX TRANSFER PROTOCL)
+GET -> oye dame info de algo
+HEAD -> identico al get pero sin el cuerpo de la respuesta 
+POST ->envio algo nuevo (creacion)
+PUT -> reeplazar esto completamente
+DELETE ->borra un recurso en especifico
+CONNECT -> establece un tunel hacia el servidor 
+OPTIONS ->El servidor responde con qué métodos están permitidos (GET, POST, etc.).
+TRACE -> “repite lo que dije, para ver si me escuchaste bien”.
+PATCH -> cambia solo una parte de esto
