@@ -50,3 +50,10 @@ ________________________________________
 async: Marca una función como capaz de manejar cosas que tardan.
 await: Hace que esperes dentro de esa función asincrónica antes de continuar.
 ___________________________________________________________________
+bcrypt : encriptar cadenas de caracteres
+[npm i bcrypt --save]
+Contraseña: "miContraseña123"
+Sal (salt): "a1b2c3d4"
+Resultado -> "miContraseña123a1b2c3d4"
+bcrypt aplica el algoritmo de hashing 
+$2a$10$wKpBz9q2wzmtFtsN6cFOzC7dNYz1L4v0g9TlePqHr0BaL.nf5J0tC
