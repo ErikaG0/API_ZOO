@@ -1,8 +1,9 @@
 Mongo = Base de datos
 Express = framework para el back
-Angular = framework oara el fornt
+Angular = framework oara el front
 Node.js= entorno de ejecucion que lanza el servidor
-______________________________________________________________________________________
+API application programing interface
+___________________________________________________________________________________
 intalar nodejs.
 comando [npm init --yes]
 inicia un proyecto el cual crea un archivo llamado package.json que contiene informacion base del proyecto
@@ -20,7 +21,7 @@ instalara nodemon como dependencia de dasarollo
 Archivo package.json agrega
 en la parte de scripts ["dev": "nodemon index.js"]
 Para ejecutarlo
-npm run dev
+[npm run dev]
 ___________________________
 Mecanismo servidores web para hacer peticiones protocolo HTPP (HYPERTEX TRANSFER PROTOCL)
 GET -> oye dame info de algo
@@ -32,3 +33,17 @@ CONNECT -> establece un tunel hacia el servidor
 OPTIONS ->El servidor responde con qué métodos están permitidos (GET, POST, etc.).
 TRACE -> “repite lo que dije, para ver si me escuchaste bien”.
 PATCH -> cambia solo una parte de esto
+_______________________________________________
+comando [npm i mongoose --save] #instala el componente de mongoose acceder a la DB
+comando [npm i dotenv --save]
+______________________________________________
+body-parser
+Cuando se envia (formulario Json )desde el frontend o postman los datos llegan al servidor como 
+un paquete sin abrir..El servidor no lo entiende [body-parser = desempaquerar o leer estos datos y 
+convertilos a un objeto que la apliacion pueda entender]
+______________________________________________________________
+MIDDLEWARE filtro o puente => El middleware es como el cartero que abre y traduce el paquete para que la ruta final lo pueda entender y usar.
+El cliente manda la info ->	Un paquete cerrado con datos (formulario o JSON)
+Middleware (body-parser) ->	Abre el paquete, lo traduce a un objeto (req.body)
+Ruta final	Usa ese objeto para guardar, responder, o lo que necesites
+________________________________________
