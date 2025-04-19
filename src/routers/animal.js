@@ -4,7 +4,7 @@ const router = express.Router();
 const animalShema = require("../models/animal");
 
 //creacion animal
-router.post("/creation/animals", (req,res) =>{
+router.post("/creation", (req,res) =>{
     const animal= animalShema(req.body);
     animal
     //guarda ese animal en la bd
@@ -17,15 +17,15 @@ router.post("/creation/animals", (req,res) =>{
 
 
 //consulta de todos los animales
-router.get("/all/animals", (req,res) =>{
+router.get("/all", (req,res) =>{
     animalShema.find()
         .then((data) => res.json(data))
         .catch((error) => res.json ({message:error}));
 })
-module.exports = router;
+
 
 //animal por id
-router.get("/search/animal/:id", (req,res) => {
+router.get("/search/:id", (req,res) => {
     const { id } = req.params;
     animalShema
         .findById(id)
@@ -34,7 +34,7 @@ router.get("/search/animal/:id", (req,res) => {
 })
 
 //update 
-router.put("/update/animal/:id", (req, res) =>{
+router.put("/update/:id", (req, res) =>{
     const { id } = req.params;
     const {nombre, edad, tipo,fecha} = req.body;
     animalShema
@@ -48,10 +48,15 @@ router.put("/update/animal/:id", (req, res) =>{
 
 
 //delete
-router.delete("/delete/animal/:id", (req,res) =>{
+router.delete("/delete/:id", (req,res) =>{
     const { id } = req.params;
     animalShema
         .findByIdAndDelete(id)
         .then((data) => {res.json(data)})
         .catch((error) => {res.json({message:error})})
 })
+
+
+
+//exporta las rutas para que puedan ser utilizadas en otro lugar
+module.exports = router;

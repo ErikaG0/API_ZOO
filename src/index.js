@@ -41,6 +41,7 @@ const express = require('express');
 const app = express();
 const port = 3000
 const animalRoutes = require("./routers/animal");
+const animalArea = require("./routers/area");
 
 const mongoose = require("mongoose");
 require('dotenv').config();
@@ -51,7 +52,8 @@ app.use(parser.urlencoded({extended: false}));
 app.use(parser.json());
 
 //Decirle a Express cuando alguien haga una peticion a /api usa las rutas definidas
-app.use("/api", animalRoutes);
+app.use("/api/animals", animalRoutes);
+app.use("/api/areas", animalArea);
 app.use(express.json());
 
 //Conexion a la DB
