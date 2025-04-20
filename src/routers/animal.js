@@ -2,6 +2,9 @@ const express = require("express");
 //mini-rutas que maneja caminos especificos
 const router = express.Router();
 const animalShema = require("../models/animal");
+const verifyToken = require('./validate_token');
+
+
 
 //creacion animal
 router.post("/creation", (req,res) =>{
@@ -17,7 +20,7 @@ router.post("/creation", (req,res) =>{
 
 
 //consulta de todos los animales
-router.get("/all", (req,res) =>{
+router.get("/all", verifyToken, (req,res) =>{
     animalShema.find()
         .then((data) => res.json(data))
         .catch((error) => res.json ({message:error}));
